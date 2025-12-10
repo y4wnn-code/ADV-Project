@@ -1,0 +1,73 @@
+{
+  "users": [
+    {
+      "username": "user10001",
+      "password": "kestrel04",
+      "pfp": "/uploads/1764656719287-tumblr_edf6ee8b807535433b067e7dc67834a8_3b28c42e_500.jpg",
+      "createdAt": "2025-12-02T06:24:11.251Z",
+      "bio": ""
+    },
+    {
+      "username": "user10002",
+      "password": "kestrel04",
+      "pfp": "/uploads/1764657589560-jp.jpg",
+      "createdAt": "2025-12-02T06:27:17.778Z"
+    },
+    {
+      "username": "user10003",
+      "password": "kestrel04",
+      "pfp": "/uploads/1764658323919-donnie.jpg",
+      "createdAt": "2025-12-02T06:38:44.856Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1764660288788",
+      "username": "user10003",
+      "title": "Pearl",
+      "year": "2022",
+      "content": "shoutout to my wife",
+      "createdAt": "2025-12-02T07:24:48.788Z",
+      "likes": 0,
+      "dislikes": 0,
+      "comments": [],
+      "reactions": []
+    },
+    {
+      "id": "1764657067850",
+      "username": "user10002",
+      "title": "Breaking Bad",
+      "year": "2008",
+      "content": "What is that? Conjecture? Are you basing that on that he's got a normal, healthy brain or something? Did you not see him beat a dude to death for like nothing? And that way, that way he just kept staring at us. Saying, \"You're done.\" You're done?! You wanna know what that means? I will tell you what that means! That means exactly how it sounds, yo! Alright, we are witnesses, we are loose ends! Right now, Tuco's thinking, \"Yeah, hey, they cook good meth, but can I trust them?\" What happens when he decides \"no\"?",
+      "createdAt": "2025-12-02T06:31:07.850Z",
+      "likes": 1,
+      "dislikes": 0,
+      "comments": [],
+      "reactions": [
+        {
+          "username": "user10003",
+          "type": "like",
+          "createdAt": "2025-12-09T03:24:06.267Z"
+        }
+      ]
+    },
+    {
+      "id": "1764656798027",
+      "username": "user10001",
+      "title": "The Amazing Digital Circus",
+      "year": "2023",
+      "content": "im jax",
+      "createdAt": "2025-12-02T06:26:38.027Z",
+      "likes": 0,
+      "dislikes": 1,
+      "comments": [],
+      "reactions": [
+        {
+          "username": "user10002",
+          "type": "dislike",
+          "createdAt": "2025-12-09T03:25:26.609Z"
+        }
+      ]
+    }
+  ]
+}

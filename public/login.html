@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;">
+  <div style="width:94%;max-width:420px;background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+    <h2 style="text-align:center;margin:0 0 14px 0;font-weight:700;">bloggwatch.</h2>
+    <input id="u" placeholder="username" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc">
+    <input id="p" placeholder="password" type="password" style="width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc">
+    <button id="loginBtn" style="width:100%;padding:10px;border-radius:8px;border:none;background:#3b82f6;color:#fff">login</button>
+    <div style="text-align:center;margin-top:10px;font-size:13px">no account? <a href="register.html">register</a></div>
+  </div>
+</div>
+<script>
+document.getElementById('loginBtn').addEventListener('click', async () => {
+  const username = document.getElementById('u').value.trim();
+  const password = document.getElementById('p').value.trim();
+  if (!username || !password) return;
+  const res = await fetch('/api/login', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ username, password })});
+  const data = await res.json();
+  if (data.success) { localStorage.setItem('username', username); window.location.href = 'dashboard.html'; }
+  else alert('Incorrect credentials');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+html,body,#__next{height:100%;}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#111;background:#f7fafc}
+input,textarea,button{font-family:inherit;padding:8px;border-radius:8px;border:1px solid #ddd}
+button{background:#2563eb;color:#fff;border:none;cursor:pointer}
+
+/* small toast / alert UI used by login/register pages */
+.alert {
+	padding: 10px 12px;
+	border-radius: 8px;
+	margin: 8px 0 12px 0;
+	font-size: 14px;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.alert.error { background: #fee2e2; color: #991b1b; border: 1px solid rgba(239,68,68,0.12); }
+.alert.success { background: #ecfdf5; color: #065f46; border: 1px solid rgba(16,185,129,0.12); }
+
+.toast-area { position: fixed; top: 16px; right: 16px; z-index: 9999; min-width: 220px; }
+.toast { background:#111;color:#fff;padding:10px;border-radius:8px;margin-bottom:8px;opacity:0.95 }

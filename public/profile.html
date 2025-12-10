@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="top-bar"><div class="app-title">bloggwatch.</div></div>
+  <div style="max-width:700px;margin:80px auto;padding:16px">
+    <div id="profileCard" style="background:#fff;padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);">
+      <img id="pp" src="/default-pfp.png" style="width:64px;height:64px;border-radius:32px;float:left;margin-right:12px" />
+      <div style="padding-top:8px"><h2 id="pname">Profile</h2><div id="pbio" style="color:#666;margin-top:6px;max-width:680px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div><div id="pmeta" style="color:#666;margin-top:6px"></div></div>
+      <div style="clear:both"></div>
+    </div>
+    <h3 style="margin-top:18px">Posts</h3>
+    <div id="posts"></div>
+  </div>
+<script>
+const params = new URLSearchParams(location.search);
+const u = params.get('username');
+if (!u) location.href = '/dashboard.html';
+async function load(){
+  const r = await fetch('/api/user/'+u);
+  const user = await r.json();
+  document.getElementById('pp').src = user.pfp || '/default-pfp.png';
+  document.getElementById('pname').innerText = user.username;
+  document.getElementById('pbio').innerText = user.bio ? user.bio : '';
+  document.getElementById('pmeta').innerText = 'Joined ' + new Date(user.createdAt).toLocaleString();
+
+  const pr = await fetch('/api/posts');
+  const posts = await pr.json();
+  const mine = posts.filter(p=>p.username===u);
+  const out = document.getElementById('posts');
+  out.innerHTML = '';
+  mine.forEach(p=>{ const d = document.createElement('div'); d.className='post-card'; d.innerHTML = '<div class="post-title">'+escapeHtml(p.title)+'</div><div class="post-meta">'+escapeHtml(p.username)+'<span class="meta-sep">·</span>'+new Date(p.createdAt).toLocaleString()+'</div><div class="post-content">'+escapeHtml(p.content)+'</div>'; out.appendChild(d); });
+}
+function escapeHtml(s){ if(!s) return ''; return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+load();
+</script>
+</body>
+</html>

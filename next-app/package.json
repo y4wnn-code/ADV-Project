@@ -1,0 +1,22 @@
+{
+  "name": "bloggwatch-next",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "migrate": "node scripts/migrate.js",
+    "wipe-db": "node scripts/wipe_db.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mysql2": "^3.3.2",
+    "next": "^13.5.4",
+    "next-connect": "^0.12.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "multer": "^2.0.2",
+    "formidable": "^3.7.0"
+  }
+}

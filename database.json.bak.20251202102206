@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "username": "essepinkman",
+      "password": "4m34m3",
+      "pfp": "/default-pfp.png",
+      "createdAt": "2025-11-25T13:44:04.326Z"
+    },
+    {
+      "username": "batmand",
+      "password": "brucewine",
+      "pfp": "/uploads/1764641942379-370206979_357198633337643_8662775665466501223_n.jpg",
+      "createdAt": "2025-12-02T01:54:37.287Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1764082334248",
+      "username": "essepinkman",
+      "title": "Pearl",
+      "year": "2022",
+      "content": "frdetsfhduyyuuguyd",
+      "createdAt": "2025-11-25T14:52:14.248Z",
+      "likes": 9,
+      "dislikes": 7,
+      "comments": []
+    },
+    {
+      "id": "1764078310164",
+      "username": "essepinkman",
+      "title": "Dexter",
+      "year": "2006",
+      "content": "tonight's the night",
+      "createdAt": "2025-11-25T13:45:10.164Z",
+      "likes": 8,
+      "dislikes": 4,
+      "comments": []
+    }
+  ]
+}
