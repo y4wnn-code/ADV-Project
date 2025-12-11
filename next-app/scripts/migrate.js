@@ -4,7 +4,7 @@ const pool = require('../lib/db');
 async function run(){
   try{
     const sql = fs.readFileSync(__dirname + '/../db/migrations/create_schema.sql', 'utf8');
-    // split statements by ; so we can run them sequentially
+    
     const stmts = sql.split(/;\s*\n/).map(s => s.trim()).filter(Boolean);
     for(const s of stmts){
       await pool.query(s);
